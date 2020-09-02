@@ -1,0 +1,35 @@
+.sidebar-header{
+    background-color: #e4e1ec;
+}
+.title {
+    align-items: center;
+    display: inline-flex;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0 0.5rem;
+    text-transform: uppercase;
+}
+.btn_root{
+    padding: 0px 20px;
+    position: relative;
+}
+
+.btn_root  svg{
+    width: 30px;
+    height: 30px;
+    stroke: #7D808B;
+}
+.btn_root span{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.sidebar-logo{
+    height: 6rem;
+    object-fit: cover;
+    width: 10rem;
+}
+.close_button{
+    padding: 1rem;
+    align-self: flex-start;
+}

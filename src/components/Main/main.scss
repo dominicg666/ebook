@@ -1,0 +1,29 @@
+.root {
+    background-color: rgb(var(--venia-background-color));
+    color: rgb(var(--venia-text));
+    position: relative;
+    z-index: 1;
+}
+
+.root_masked {
+    composes: root;
+}
+
+.page {
+    min-height: calc(100vh - 77px);
+    padding-top: 77px;
+}
+
+.page_home {
+    min-height: calc(220vh - 77px);
+}
+
+.page_masked {
+    composes: page;
+}
+
+@media (max-width:1023px) {
+    .page {
+        padding-top: 60px;
+    }
+}

@@ -1,0 +1,126 @@
+/* animation helpers */
+
+.navigation_enter {
+    transition-duration: 384ms;
+    transition-timing-function: var(--venia-anim-in);
+}
+
+.navigation_exit {
+    transition-duration: 192ms;
+    transition-timing-function: var(--venia-anim-out);
+}
+
+.navigation_hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navigation_visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* module */
+
+.navigation_root {
+    @extend .navigation_hidden;
+    background-color: white;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    left: 0;
+    max-width: 322px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition-property: opacity, transform, visibility;
+    width: 100%;
+    z-index: 3;
+}
+
+.navigation_root_open {
+    @extend .navigation_root;
+    @extend .navigation_enter;
+    @extend .navigation_visible;
+    box-shadow: 1px 0 rgb(var(--venia-border));
+    transform: translate3d(0, 0, 0);
+}
+
+.navigation_header {
+    align-content: center;
+    background-color: rgb(var(--venia-grey));
+    box-shadow: 0 1px rgb(var(--venia-border));
+    display: flex;
+    position: relative;
+    z-index: 1;
+    padding: 12px 0px;
+    min-height: 100px;
+}
+
+.navigation_body {
+    @extend .navigation_exit;
+    @extend .navigation_visible;
+    min-height: 0;
+    overflow: auto;
+    transition-property: opacity, visibility;
+}
+
+.navigation_body_masked {
+    @extend .navigation_body;
+    @extend .navigation_enter; 
+    @extend .navigation_hidden;
+    z-index: 4;
+    margin-top: 6rem;
+}
+
+.navigation_footer {
+    box-shadow: 0 -1px rgb(var(--venia-border));
+}
+
+.navigation_modal {
+    @extend .navigation_exit; 
+    @extend .navigation_hidden;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0rem;
+    transform: translate3d(-100%, 0, 0);
+    transition-property: opacity, transform, visibility;
+}
+
+.navigation_modal_open {
+    @extend .navigation_modal;
+    @extend .navigation_enter;
+    @extend .navigation_visible;
+    transform: translate3d(0, 0, 0);
+}
+
+.navigation_isRoot {
+    @extend .navigation_header;
+    grid-template-columns: 1fr 3.5rem;
+    padding-left: 1rem;
+}
+
+
+.navigation_site_HeaderLinks li a,.navigation_site_HeaderLinks li button{
+    padding: 20px;
+    display: block;
+    font-size: 16px;
+}
+.nav-item a{
+    padding: 0.4rem 1rem;
+    width: 100% !important;
+    display: block;    
+    text-decoration: none;
+    color: #000;
+}
+.nav-item a.active{
+    color: #7a0088;
+}
+.nav-item:first-child a{
+padding-top: 1rem;
+}
